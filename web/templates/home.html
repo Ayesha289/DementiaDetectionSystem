@@ -1,0 +1,247 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/homeStyle.css" />
+    <title>Dementia Detection System</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="navbar">
+        {% if user.is_authenticated %}
+        <a href="/">Home</a>
+        <a href="/form">Check for Dementia!</a>
+        <a href="/getData">View History</a>
+        <a href="/logout">Logout</a>
+        {% else %}
+        <a href="/">Home</a>
+        <a href="/login">Login/Signup</a>
+        {% endif %}
+      </div>
+    </div>
+    <header>
+      <div class="header-content">
+        <h1 class="header-subtitle animate-pop-in">
+          Early Detection of Dementia using IoT and ML
+        </h1>
+      </div>
+    </header>
+    <div class="content">
+      <section>
+        <button>What do we do?</button>
+        <p>
+          Dementia is a neurodegenerative disorder that causes the loss of cognitive functioning i.e. 
+          thinking, remembering, and reasoning that affects millions of individuals worldwide, imposing
+          a huge burden on healthcare systems and families. 
+          Early detection can significantly enhance the quality of life for those affected. 
+          The proposed system introduces a novel approach to early dementia detection by using 
+          Machine Learning and the Internet of Things. Random Forest Classification algorithm is 
+          employed to process and interpret the patient's medical history. Using the machine learning 
+          model the detection of dementia can be predicted and based on the results, further treatment 
+          is suggested by the model. If the patient does not have any dementia related medical record, 
+          then using the IoT device, we can detect and measure motion and orientation changes, and we 
+          can check and keep track of future dementia chances. 
+        </p>
+        <button>Developers</button>
+      </section>
+    </div>
+    <main class="main">
+      <section class="card-area">
+        <section class="card-section">
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--city">
+                    <h2 class="card-front__heading">Ayesha Mulani</h2>
+                    <p class="card-front__text-price">Python Developer</p>
+                  </div>
+
+                  <div class="card-front__bt">
+                    <p
+                      class="card-front__text-view card-front__text-view--city"
+                    >
+                      View me
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <img
+                    class="video__container"
+                    src="../static/images/Ayesha Mulani.jpg"
+                    alt="Ayesha Mulani"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="inside-page__container">
+                <h3 class="inside-page__heading inside-page__heading--city">
+                  About Me
+                </h3>
+                <p class="inside-page__text">
+                  Built the backend of the project using Flask API
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/ayesha-mulani-173b6b207/"
+                  class="inside-page__btn inside-page__btn--city"
+                  >View Profile</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="card-section">
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--ski">
+                    <h2 class="card-front__heading">Trupti Surwade</h2>
+                    <p class="card-front__text-price">UI Designer</p>
+                  </div>
+
+                  <div class="card-front__bt">
+                    <p class="card-front__text-view card-front__text-view--ski">
+                      View me
+                    </p>
+                  </div>
+                </div>
+
+                <div class="card-back">
+                  <img
+                    class="video__container"
+                    src="../static/images/Trupti Surwade.png"
+                    alt="Trupti Surwade"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="inside-page__container">
+                <h3 class="inside-page__heading inside-page__heading--ski">
+                  About Me
+                </h3>
+                <p class="inside-page__text">
+                  Designed the UI of the project using HTML, CSS and JavaScript
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/trupti-surwade-13a2a1239/"
+                  class="inside-page__btn inside-page__btn--ski"
+                  >View Profile</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="card-section">
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--beach">
+                    <h2 class="card-front__heading">Samruddhi</h2>
+                    <h2 class="card-front__heading">Gawade</h2>
+                    <p class="card-front__text-price">IoT device</p>
+                    <p class="card-front__text-price">development</p>
+                  </div>
+
+                  <div class="card-front__bt">
+                    <p
+                      class="card-front__text-view card-front__text-view--beach"
+                    >
+                      View me
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <img
+                    class="video__container"
+                    src="../static/images/Samruddhi Gawade.png"
+                    alt="Samruddhi Gawade"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="inside-page__container">
+                <h3 class="inside-page__heading inside-page__heading--beach">
+                  About Me
+                </h3>
+                <p class="inside-page__text">
+                  Built IoT device for dementia detection
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/samruddhi-gawade-7571b2241/"
+                  class="inside-page__btn inside-page__btn--beach"
+                  >View Profile</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card-section">
+          <div class="card">
+            <div class="flip-card">
+              <div class="flip-card__container">
+                <div class="card-front">
+                  <div class="card-front__tp card-front__tp--camping">
+                    <h2 class="card-front__heading">Pragati Pate</h2>
+                    <p class="card-front__text-price">Data Preprocessing</p>
+                  </div>
+
+                  <div class="card-front__bt">
+                    <p
+                      class="card-front__text-view card-front__text-view--camping"
+                    >
+                      View me
+                    </p>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <img
+                    class="video__container"
+                    src="../static/images/Pragati Pate.png"
+                    alt="Pragati Pate"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="inside-page">
+              <div class="inside-page__container">
+                <h3 class="inside-page__heading inside-page__heading--camping">
+                  About Me
+                </h3>
+                <p class="inside-page__text">
+                  Processed IoT device and ML model dataset for detection of
+                  dementia
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/pragati-pate-670972283/"
+                  class="inside-page__btn inside-page__btn--camping"
+                  >View Profile</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div class="content">
+      <section>
+        <button>Contact Us</button>
+        <p>
+          Query regarding the IoT model or the prediction results accuracy? Feel
+          free to contact us on the given email address:
+        </p>
+        <p>✉ dementiadetectionsystem@gmail.com</p>
+      </section>
+    </div>
+    <footer class="footer">© 2024 Group A07</footer>
+  </body>
+</html>

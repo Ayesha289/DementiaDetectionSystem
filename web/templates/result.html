@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/formStyle.css" />
+    <title>Result</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/">Home</a>
+      <a href="/logout">Logout</a>
+    </nav>
+    <div id="multistepsform">
+      <ul id="progressbar">
+        <li class="active">General Information</li>
+        <li class="active">Demographics Information</li>
+        <li class="active">Clinical Information</li>
+        <li class="active">Derived anatomic volumes</li>
+        <li class="active">Results</li>
+      </ul>
+      <fieldset>
+        <h2 class="fs-title">Result</h2>
+        {% if predict == 0 %}
+        <h1 class="fs-subtitle">Dementia is Detected!</h1>
+        <p class="fs-subtitle">Oh No! Our model predicted that you may have dementia based on your medical records! It is advised to contact to your personal doctor.</p>
+        {% elif predict == 1 %}
+        <h1 class="fs-subtitle">Possibility of Dementia</h1>
+        <p class="fs-subtitle">There is a possibility of dementia based on your medical records. It is advised to contact to your personal doctor.</p>
+        {% else %}
+        <h1 class="fs-subtitle">No Dementia is Detected!</h1>
+        <p class="fs-subtitle">Woo hoo! Congratulations! No dementia is detected by our model based on your medical records.  But if you want to still monitor your dementia chances you can wear our IoT device to monitor your activity for possibility of dementia! </p>
+        {% endif %}
+        <a href="/">
+          <input type="button" class="action-button" value="Okay!"
+        /></a>
+      </fieldset>
+    </div>
+  </body>
+</html>

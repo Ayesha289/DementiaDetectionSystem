@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/loginStyle.css" />
+    <title>Connect With Us!</title>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar">
+        <a href="/">Home</a>
+      </nav>
+
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert-{{ category }}">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        {{ message }}
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+    </div>
+
+    <div class="container right-panel-active">
+      <div class="container__form container--signup">
+        <form
+          method="POST"
+          action="{{ url_for('auth.login') }}?f=f1"
+          class="form"
+          id="form1"
+        >
+          <h2 class="form__title">Sign Up</h2>
+          <input
+            type="text"
+            placeholder="Username"
+            class="input"
+            name="fname"
+          />
+          <input type="email" placeholder="Email" class="input" name="email" />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input"
+            name="password1"
+          />
+          <input
+            type="password"
+            placeholder="Re-Enter Password"
+            class="input"
+            name="password2"
+          />
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+      </div>
+
+      <div class="container__form container--signin">
+        <form
+          method="POST"
+          action="{{ url_for('auth.login') }}?f=f2"
+          class="form"
+          id="form2"
+        >
+          <h2 class="form__title">Log In</h2>
+          <input type="email" placeholder="Email" class="input" name="email" />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input"
+            name="password"
+          />
+          <button type="button" id="myBtn" class="link">Forgot your password?</button>
+          <button type="submit" class="btn">Log In</button>
+        </form>
+      </div>
+
+      <div class="container__overlay">
+        <div class="overlay">
+          <div class="overlay__panel overlay--left">
+            <button class="btn" id="signIn">Log In</button>
+          </div>
+          <div class="overlay__panel overlay--right">
+            <button type="submit" class="btn" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <form
+        method="POST"
+        action="{{ url_for('auth.login') }}?f=f3"
+        class="modal-content"
+      >
+        <span class="close">&times;</span>
+        <label for="email">Enter your registered email: </label>
+        <input
+          type="email"
+          placeholder="john@gmail.com"
+          class="input"
+          name="email"
+        />
+        <button type="submit" class="btn" id="signUp">Submit</button>
+      </form>
+    </div>
+    <script src="../static/js/loginScript.js"></script>
+  </body>
+</html>

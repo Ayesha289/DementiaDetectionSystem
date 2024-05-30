@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles/historyStyle.css" />
+    <title>Records</title>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </div>
+    {% if admin == 1 %}
+    {% if data_exists == 1 %}
+    <div>
+      <table id="records">
+        <tr>
+          <th>Patient's Name</th>
+          <th>No. of  visits</th>
+          <th>MR Delay</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Education Years</th>
+          <th>SocioEconomic Status</th>
+          <th>Mini-Mental State Examination Score</th>
+          <th>Clinical Dementia Rating</th>
+          <th>Estimated total intracranial volume</th>
+          <th>Normalized whole-brain volume</th>
+          <th>Atlas scaling factor</th>
+          <th>Prediction</th>
+        </tr>
+        {% for items in history %}
+        <tr>
+          <td>{{ items.name }}</td>
+          <td>{{ items.visit }}</td>
+          <td>{{ items.mrDelay }}</td>
+          <td>{{ items.gender }}</td>
+          <td>{{ items.age }}</td>
+          <td>{{ items.edu }}</td>
+          <td>{{ items.ses }}</td>
+          <td>{{ items.mmse }}</td>
+          <td>{{ items.cdr }}</td>
+          <td>{{ items.etiv }}</td>
+          <td>{{ items.nwbv }}</td>
+          <td>{{ items.asf }}</td>
+          <td>{{ items.result }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% else %}
+    <div>
+      <h1>No records found.</h1>
+    </div>
+    {% endif %}
+    {% else %}
+    {% if data_exists == 1 %}
+    <div>
+      <table id="records">
+        <tr>
+          <th>Patient's Name</th>
+          <th>Prediction</th>
+        </tr>
+        {% for items in history %}
+        <tr>
+          <td>{{ items.name }}</td>
+          <td>{{ items.result }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% else %}
+    <div>
+      <h1>No records found.</h1>
+    </div>
+    {% endif %}
+  {% endif %}
+  </body>
+</html>
